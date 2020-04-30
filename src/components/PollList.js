@@ -20,18 +20,30 @@ class PollList extends Component {
     }
 }
 
+function _getSortedQuestionList(questions) {
+    let questionsList = []
+    for (let question in questions) {
+        questionsList.push(questions[question])
+    }
+    questionsList.sort((a, b) => {
+        return b.timestamp - a.timestamp
+    })
+    return questionsList
+}
+
 function mapStateToProps({ questions, users, authedUser, activeTab }) {
     const user = users[authedUser]
-    const answered = Object.keys(user.answers);
-    const unanswered = [];
-    Object.keys(questions).forEach(id => {
-        if (!answered.includes(id)) {
-            unanswered.push(id);
+    let questionsList = _getSortedQuestionList(questions);
+    const unansweredList = [];
+    const answerList = questionsList.filter(question => Object.keys(user.answers).includes(question.id)).map(question => question.id);
+    questionsList.forEach(question => {
+        if (!answerList.includes(question.id)) {
+            unansweredList.push(question.id);
         }
     });
 
     return {
-        questionIds: activeTab === 'unanswered' ? unanswered : answered,
+        questionIds: activeTab === 'unanswered' ? unansweredList : answerList,
         questions,
         users,
         authedUser

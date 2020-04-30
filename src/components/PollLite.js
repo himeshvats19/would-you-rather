@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom'
 class PollLite extends Component {
     render() {
         const { question, author } = this.props;
-        console.log(question)
         const id = question.id
         return (
             <div className="card-custom">

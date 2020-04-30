@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Card, Row, Col, ProgressBar, Badge } from 'react-bootstrap'
 
-export default class PollResult extends Component {
-    render() {
-        const { question, author, authedUser } = this.props
+export default function PollResult(props){
+        const { question, author, authedUser } = props
         const { optionOne, optionTwo } = question
         const totalVotes = optionOne.votes.length + optionTwo.votes.length;
         const optionOnePercentage = optionOne.votes.length / totalVotes * 100;
@@ -48,5 +47,4 @@ export default class PollResult extends Component {
                 </Card.Body>
             </Card>
         )
-    }
 }
