@@ -31,7 +31,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Route path='/' exact render={(props) =>
+          <Route path='/would-you-rather' exact render={(props) =>
             authedUser !== null ? <Dashboard /> : <Login setAuthUser={this.setAuthUser} />} />
           <Route path='/add' render={(props) =>
             authedUser !== null ? <NewQuestion history={props.history} /> : <Login setAuthUser={this.setAuthUser} />} />
