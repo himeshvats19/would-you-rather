@@ -23,7 +23,7 @@ class PollLite extends Component {
                             <Col>
                                 <Card.Title>Would You Rather?</Card.Title>
                                 <p className="lt-ans-snippet">{question.optionOne.text}</p>
-                                <Link to={`/questions/${id}`}>
+                                <Link to={`/would-you-rather/questions/${id}`}>
                                     <Button variant="primary">View</Button>
                                 </Link>
                             </Col>

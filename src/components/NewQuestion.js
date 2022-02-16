@@ -32,7 +32,7 @@ class NewQuestion extends Component {
         const optionTwoText = e.target.optionTwo.value.trim();
         const author = this.props.authedUser;
         _DATA._saveQuestion({ optionOneText, optionTwoText, author }).then(resp => {
-            this.props.history.push('/')
+            this.props.history.push('/would-you-rather')
             this.props.dispatch(handleInitialQuestions())
         })
 

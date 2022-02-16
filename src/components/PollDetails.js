@@ -15,7 +15,7 @@ class PollDetails extends Component {
         const question = questions[question_id];
 
         if (question === undefined) {
-            return <Redirect to='/404' />
+            return <Redirect to='/would-you-rather/404' />
         }
         const author = users[question.author]
         return (

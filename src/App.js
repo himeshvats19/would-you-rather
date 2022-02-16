@@ -33,13 +33,13 @@ class App extends Component {
         <div className="App">
           <Route path='/would-you-rather' exact render={(props) =>
             authedUser !== null ? <Dashboard /> : <Login setAuthUser={this.setAuthUser} />} />
-          <Route path='/add' render={(props) =>
+          <Route path='/would-you-rather/add' render={(props) =>
             authedUser !== null ? <NewQuestion history={props.history} /> : <Login setAuthUser={this.setAuthUser} />} />
-          <Route path='/leaderboard' render={(props) =>
+          <Route path='/would-you-rather/leaderboard' render={(props) =>
             authedUser !== null ? <Leaderboard /> : <Login setAuthUser={this.setAuthUser} />} />
-          <Route path='/questions/:question_id' render={(props) =>
+          <Route path='/would-you-rather/questions/:question_id' render={(props) =>
             authedUser !== null ? <PollDetails match={props.match} history={props.history} /> : <Login setAuthUser={this.setAuthUser} />} />
-             <Route path='/404' render={(props) =>
+             <Route path='/would-you-rather/404' render={(props) =>
              <h1>404</h1> }/>
         </div>
       </Router>

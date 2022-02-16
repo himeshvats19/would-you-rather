@@ -24,11 +24,11 @@ class PollNavbar extends Component {
                         }}>  Home
                     </Link>
                         <Link to={{
-                            pathname: '/add',
+                            pathname: '/would-you-rather/add',
                         }}>  New Question
                     </Link>
                         <Link to={{
-                            pathname: '/leaderboard',
+                            pathname: '/would-you-rather/leaderboard',
                         }}>  Leaderboard
                     </Link>
                     </Nav>
